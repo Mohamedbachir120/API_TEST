@@ -1,0 +1,9 @@
+composer create-project laravel/laravel "project name" --prefer-dist
+php artisan migrate
+composer require tymon/jwt-auth --ignore-platform-reqs
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+php artisan jwt:secret
+php artisan make:controller AuthController
+php artisan db:seed --class=AdminSeeder
+
+
